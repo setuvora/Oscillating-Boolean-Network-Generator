@@ -1,7 +1,7 @@
 # Oscillating-Boolean-Network-Generator
 ## 'Life-like' properties of randomly generated boolean networks?
 
-It is unclear whether the sophistication of biological systems is driven by the additive action of many singular parts (such as individual protein molecules) or by the network topology of their interactions (such as cell signaling networks that exist between individual proteins). The latter view is supported by the fact that Boolean logic networks have been used to model complex biological systems for decades.  A classic example here is the cell cycle network, whose cycling behavior is largely dictated by its network topology and is maintained over an astonishingly large swath of parameter [space](https://www.pnas.org/doi/10.1073/pnas.0305937101).
+It is unclear whether the sophistication of biological systems is driven by the additive action of many reducible single parts (such as individual protein molecules) or by the network topology of their interactions (such as cell signaling networks that exist between individual proteins). The latter view is supported by the fact that Boolean logic networks have been used to model complex biological systems for decades.  A classic example here is the cell cycle network, whose cycling behavior is largely dictated by its network topology and is maintained over astonishingly large swathes of parameter [space](https://www.pnas.org/doi/10.1073/pnas.0305937101).
 
 What "life-like" behaviors can be obtained simply by generating random boolean logic networks? Let's assume cycling behavior is "life-like" (real life examples could include: cyclic pattern generator activity in the central nervous system of metazoans, oscillating activity of transcription factors, and segmented morphogen gradient patterns during development).  
 
@@ -10,9 +10,10 @@ How frequently does a randomly generated network of N nodes and k edges produce 
 Here, I use the following program to address this question.
 
 This program:
-(1) generates a random boolean network of N nodes and K edges (loosely based off the Watts-Strogatz model) with signed (+ or -) and directed (-->) edges.
-(2) runs the network for t timesteops (with the initial condition being all nodes ON to provide sufficient stimulus to the system at t0), and 
-(3) heuristically determines whether a given network is capable of indefinite oscillation.
+
+  (1) generates a random boolean network of N nodes and K edges (loosely based off the Watts-Strogatz model) with signed (+ or -) and directed (-->) edges.
+  (2) runs the network for t timesteps (with the initial condition being all nodes ON to provide sufficient stimulus to the system), and 
+  (3) heuristically determines whether a given network is capable of indefinite oscillation.
 
 Here are 30 networks (N=4, k=3) that produce indefinite oscillation, simulated over 10 timesteps. x-axis: nodes, y-axis (from top to botom): timesteps. Blue corresponds to OFF and yellow corresponds to ON node status for each timestep. 
 
