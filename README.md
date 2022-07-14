@@ -1,5 +1,5 @@
 # Oscillating-Boolean-Network-Generator
-## 'Life-like' properties of randomly generated boolean networks
+## 'Life-like' properties of randomly generated boolean networks?
 
 It is unclear whether the sophistication of biological systems is driven by the additive action of many singular parts (such as individual protein molecules) or by the network topology of their interactions (such as cell signaling networks that exist between individual proteins). The latter view is supported by the fact that Boolean logic networks have been used to model complex biological systems for decades.  A classic example here is the cell cycle network, whose cycling behavior is largely dictated by its network topology and is maintained over an astonishingly large swath of parameter [space](https://www.pnas.org/doi/10.1073/pnas.0305937101).
 
