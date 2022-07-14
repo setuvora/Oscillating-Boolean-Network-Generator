@@ -1,8 +1,7 @@
 # Oscillating-Boolean-Network-Generator
-Oscillating Boolean Network Generator to look for behaviors exhibited by biological systems
+## 'Life-like' properties of randomly generated boolean networks
 
-
-It is unclear whether the sophistication of biological systems is driven by the additive action of many singular parts (such as individual protein molecules) or by the network topology of their interactions (such as cell signaling networks that exist between individual proteins). The latter view is supported by the fact that Boolean logic networks have been used to model complex biological systems for decades.  A classic example here is the cell cycle network, whose cycling behavior is largely dictated by its network topology and is maintained over an astonishingly large swath of parameter space.
+It is unclear whether the sophistication of biological systems is driven by the additive action of many singular parts (such as individual protein molecules) or by the network topology of their interactions (such as cell signaling networks that exist between individual proteins). The latter view is supported by the fact that Boolean logic networks have been used to model complex biological systems for decades.  A classic example here is the cell cycle network, whose cycling behavior is largely dictated by its network topology and is maintained over an astonishingly large swath of parameter [space](https://www.pnas.org/doi/10.1073/pnas.0305937101).
 
 What "life-like" behaviors can be obtained simply by generating random boolean logic networks? Let's assume cycling behavior is "life-like" (real life examples could include: cyclic pattern generator activity in the central nervous system of metazoans, oscillating activity of transcription factors, and segmented morphogen gradient patterns during development).  
 
@@ -19,10 +18,10 @@ Here are 30 networks (N=4, k=3) that produce indefinite oscillation, simulated o
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/44078648/179062753-a0786f84-5fbe-4b49-b835-bdcbafd351a5.png">
 
-Now, let's scan through various node and edge parameter sets and generate 100 random networks for each. Then we can see how often we obtain a network capable of indefinite oscillation for each parameter set:
+Now, let's scan through various node and edge parameter settings and generate 100 random networks for each one. Then we can see how often we obtain a network capable of indefinite oscillation for each parameter set:
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/44078648/179062910-fdb052ee-1607-411a-a87e-d2acf3a3a3ef.png">
 
-We see that probability a randomly generated network will be capable of oscillation if a function of network size and connectivity. No networks with k<3 are capapble of producing oscillation (at the number of networks sampled). Importantly, we see that under a large range of parameters indefinite oscillation is favored, sometimes at frequencies over 1/6.
+We see that the probability a randomly generated network will be capable of oscillation scales with network size and connectivity. No networks with k<3 are capapble of producing oscillation (at the number of networks sampled). Importantly, we see that under a large range of parameters indefinite oscillation is favored, sometimes at frequencies over 1/6.
 
 Thus, it can be imagined that systems of interdependent parts with moderate connectivities are naturally capable of "life-like" behaviors as a universal quality.
