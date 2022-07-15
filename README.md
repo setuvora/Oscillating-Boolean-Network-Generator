@@ -15,7 +15,7 @@ This program:
   (2) runs the network for t timesteps (with the initial condition being all nodes ON to provide sufficient stimulus to the system), and 
   (3) heuristically determines whether a given network is capable of indefinite oscillation.
 
-Here are 30 networks (N=4, k=3) that produce indefinite oscillation, simulated over 10 timesteps. x-axis: nodes, y-axis (from top to botom): timesteps. Blue corresponds to OFF and yellow corresponds to ON node status for each timestep. 
+Here are the simulations of 30 networks (N=4, k=3) that produce indefinite oscillation. Each network is simulated over 10 timesteps. x-axis: nodes, y-axis (from top to botom): timesteps. Blue corresponds to OFF and yellow corresponds to ON node status for each timestep. 
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/44078648/179062753-a0786f84-5fbe-4b49-b835-bdcbafd351a5.png">
 
