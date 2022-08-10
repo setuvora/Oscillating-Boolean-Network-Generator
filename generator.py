@@ -15,18 +15,7 @@ import seaborn as sns
 from pylab import rcParams
 
 
-#timecourse = np.load('timecourse.npy')
-
 rcParams['figure.figsize'] = 10, 10
-#timesteps = 120
-#nodes = 120
-#k = 90
-#make empty network, signMatrix, adjacency matrix and "adSignMatrix" (defined below)
-#networkState = np.zeros(nodes)
-#signMatrix = np.zeros((nodes, nodes))
-#adSignMatrix = np.zeros((nodes, nodes))
-#adMatrix = np.zeros((nodes, nodes))
-#creare a temp networkState matrix for synchronous updating of the network
 x = True
 
 def makeNetwork(nodes, k):
@@ -51,7 +40,7 @@ def makeNetwork(nodes, k):
     for x in range(nodes):
         for y in range(nodes):
             signMatrix[x][y] = signStates[randint(0, 1)]
-    #times the sign matrix by the adjacency matrix to make a signed adjacency matrix "adSign"
+    #multiply the sign matrix by the adjacency matrix to make an adjacency-Sign matrix or "adSign"
     adSignMatrix = adMatrix * signMatrix
     #this will be used to update the network at each time step
     #turn all nodes on initially
@@ -125,24 +114,6 @@ def runTrials(nodes, k, timesteps):
     print(results)
     return nodes, k, results
 
-'''
-#np.savetxt('myfile.csv', timecourse, delimiter=',')
-g, adMatrix, adSignMatrix, timecourse = testOscilltion(4, 3, 10)
-
-print(type(timecourse))
-timecourse.sort(axis=1)
-
-
-sns.heatmap(timecourse, cmap='plasma', cbar = False,
-                    square=True, linewidths = 2, linecolor='black')
-plt.imshow(timecourse, cmap='plasma', interpolation='nearest')
-plt.xlabel("Node")
-plt.ylabel("Timestep")
-plt.tight_layout()
-plt.show()
-print(adSignMatrix)
-print(adSignMatrix[0])
-'''
 
 resultsMaster = {"Trial": [],  "Result": []}
 for i in range(1,101):
@@ -213,70 +184,6 @@ plt.ylabel('Nodes', fontsize=20)
 plt.tight_layout()
 plt.show()
 
-'''
-
-
-'''
-g, adMatrix, adSignMatrix, timecourse = testOscilltion(10, 9, 10)
-
-plt.imshow(timecourse, cmap='plasma', interpolation='nearest')
-plt.xlabel("Node")
-plt.ylabel("Timestep")
-plt.tight_layout()
-plt.show()
-
-'''
-'''
-#data = eval(open("resultsMaster_12112021.spydata").read())
-#print(resultsMaster)
-data = pd.DataFrame.from_dict(resultsMaster)
-
-#plt.plot(np.mean(data["Result"]["Nodes"]==8))
-nodes = data["Nodes"]
-k = data["k"]
-Result = data["Result"]
-#print(data["Result"])
-#plt.plot(np.mean(Result[nodes==4 && k == 3], k)
-#dataset.ImageNumber[(IDBin==valBin) & (spots==valSpots)])
-    
-print(np.mean(np.mean(Result[(nodes==4) & (k == 3)])))
-array = np.zeros((10, 10))
-
-for i in range(1, 11):
-    for j in range(1, 11):
-        if i>=j:
-            array[i-1][j-1] = np.mean(np.mean(Result[(nodes==i) & (k == j)]))
-
-# Compute the correlation matrix
-
-# Generate a mask for the upper triangle
-
-array = np.asmatrix(array, dtype=None)
-#cmap = sns.diverging_palette(230, 20, as_cmap=True)
-x_axis_labels = [1,2,3,4,5,6,7,8,9,10] # labels for x-axis
-y_axis_labels = [1,2,3,4,5,6,7,8,9,10] # labels for y-axis
-mask = np.zeros_like(array)
-mask[np.triu_indices_from(mask, 1)] = True
-print(array)
-print(mask)
-sns.heatmap(array, mask=False, square=True, cmap='viridis', 
-            xticklabels=x_axis_labels, yticklabels=y_axis_labels)
-plt.xlabel('k edges',fontsize=20)
-plt.ylabel('Nodes', fontsize=20)
-plt.xticks(fontsize = 20)
-plt.yticks(rotation=0, fontsize=20) 
-plt.show()
-sns.heatmap(array, mask=mask, square=True, cmap='viridis', 
-            xticklabels=x_axis_labels, yticklabels=y_axis_labels)
-plt.yticks(rotation=0, fontsize=20) 
-plt.xticks(fontsize = 20)
-plt.xlabel('Edges per node', fontsize=20)
-plt.ylabel('Nodes', fontsize=20)
-plt.show()
-
-
-
-
 
 
 resultsMaster = {"Nodes": [], "k": [], "Result": []}
@@ -286,34 +193,9 @@ for i in range(1, 12):
         if i>=j:
             print(i, j)
             nodes, k, results = runTrials(i, j, 100)
-            resultsMaster["Nodes"].append(nodes)
-            resultsMaster["k"].append(k)
-            resultsMaster["Result"].append(results)
             
-#results[0] = 'N=2 K=1': 0
-#print(results)
-#results = runTrials()
-
-
-#g, adMatrix, adSignMatrix, timecourse = testOscilltion()
-
-#plt.imshow(timecourse, cmap='plasma', interpolation='nearest')
-#plt.xlabel("Node")
-#plt.ylabel("Timestep")
-#plt.tight_layout()
-#plt.show()
-
-resultsMaster = {"Nodes": [], "k": [], "Result": []}
-nodes, k, results = runTrials(5, 4, 100)
-resultsMaster["Nodes"].append(nodes)
-resultsMaster["k"].append(k)
-resultsMaster["Result"].append(results)
-
-data = 10000*timecourse # 44100 random samples between -1 and 1
-scaled = np.int16(data/np.max(np.abs(data)) * 32767)
-write('test.wav', 44100, scaled)
 '''
-
+         
 
     
 
