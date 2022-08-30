@@ -18,5 +18,5 @@ Now, let's scan through various node and edge parameter settings and generate 10
 
 <img width="600" alt="image" src="https://user-images.githubusercontent.com/44078648/179062910-fdb052ee-1607-411a-a87e-d2acf3a3a3ef.png">
 
-We see that the probability a randomly generated network will be capable of oscillation scales with network size and connectivity. No networks with a threshold of k<3 are capapble of producing oscillation (at the number of trials sampled). Importantly, we see that under a large range of parameters indefinite oscillation is common, sometimes at frequencies over 1/6.
+We see that the probability a randomly generated network will be capable of oscillation scales with network size and connectivity. No networks with a threshold of k<4 are capapble of producing oscillation (at the number of trials sampled). Importantly, we see that under a large range of parameters indefinite oscillation is common, sometimes at frequencies over 1/6.
 
